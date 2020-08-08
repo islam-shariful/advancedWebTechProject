@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div style="margin-left: 40%; font-size: small;">
+        <h3>Teacher's Information</h3>
+      </div>
+      <!-- Student Table Area Start Here -->
+      <div class="card height-auto">
+        <div class="card-body">
+          <div class="single-info-details">
+            <div class="item-img">
+              <img src="/assets/img/figure/teacher.jpg" alt="teacher" />
+            </div>
+            <div class="item-content">
+              <div class="info-table table-responsive">
+                <table class="table text-nowrap">
+                  <tbody>
+                    <tr>
+                      <td>ID:</td>
+                      <td class="font-medium text-dark-medium">
+                        <%= id %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Name:</td>
+                      <td class="font-medium text-dark-medium"><%= name %></td>
+                    </tr>
+                    <tr>
+                      <td>Subject:</td>
+                      <td class="font-medium text-dark-medium">
+                        <%= subject %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Joining Date:</td>
+                      <td class="font-medium text-dark-medium">
+                        <%= joining_date %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Gender:</td>
+                      <td class="font-medium text-dark-medium">
+                        <%= gender %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Email:</td>
+                      <td class="font-medium text-dark-medium">
+                        <%= email %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Address:</td>
+                      <td class="font-medium text-dark-medium">
+                        <%= address %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Phone:</td>
+                      <td class="font-medium text-dark-medium"><%= phone %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Student Table Area End Here -->
+    </div>
+  </body>
+</html>
