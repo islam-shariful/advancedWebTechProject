@@ -5,7 +5,7 @@ const fs = require("fs");
 const pdf = require("html-pdf");
 const session = require("express-session");
 
-// const db = require("../util/database");
+const db = require("../models/db");
 
 const router = express.Router();
 
@@ -68,30 +68,17 @@ router.get("/messaging", function (req, res) {
 router.get("/map", function (req, res) {
   res.render("map");
 });
-
+//......................................................
 // Teacher-profile get req
 router.get("/teacher-profile", function (req, res) {
-  var mysql = require("mysql");
-
-  var connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "sms",
-  });
-  connection.connect(function (err) {
-    if (err) {
-      console.error("error connecting: " + err.stack);
-      return;
-    }
-
-    console.log("connected as id " + connection.threadId);
-  });
-
   const sql =
     "SELECT * FROM teacher WHERE teacher_id = " + req.session.username;
+  var connection = db.getConnection();
   connection.query(sql, function (error, result) {
     res.render("teacher-profile", result[0]);
+  });
+  connection.end(function (err) {
+    console.log("Connection End...");
   });
 });
 
