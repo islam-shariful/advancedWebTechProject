@@ -3,24 +3,12 @@ const fs = require("fs");
 //const fileUpload = require("express-fileupload");
 
 const pdf = require("html-pdf");
+const session = require("express-session");
 
 // const db = require("../util/database");
 
 const router = express.Router();
 
-//login get
-router.get("/login", function (req, res) {
-  res.render("login");
-});
-//login post
-router.post("/login", function (req, res) {
-  const userId = req.body.username;
-  if (req.body.username == req.body.password) {
-    res.redirect("index5");
-  } else {
-    res.redirect("login");
-  }
-});
 //file-upload get
 router.get("/note-upload", function (req, res) {
   res.render("note-upload");
@@ -37,14 +25,25 @@ router.get("/note-upload", function (req, res) {
 //   console.log(notes);
 //   res.redirect("note-upload");
 // });
-//index5
-router.get("/index5", function (req, res) {
-  res.render("index5" /*, teacherInfo */);
-});
-//teacher
+
+//...............................................................................
+// '/' (/teacher => "index5")
 router.get("/", function (req, res) {
-  res.render("index5" /*, teacherInfo */);
+  if (req.session.username != null) {
+    res.render("index5" /*, teacherInfo */);
+  } else {
+    res.redirect("/login");
+  }
 });
+//index5 (/teacher/index5 => "index5")
+router.get("/index5", function (req, res) {
+  if (req.session.username != null) {
+    res.render("index5");
+  } else {
+    res.redirect("/login");
+  }
+});
+
 //class routine
 router.get("/class-routine", function (req, res) {
   res.render("class-routine");
@@ -88,21 +87,11 @@ router.get("/teacher-profile", function (req, res) {
 
     console.log("connected as id " + connection.threadId);
   });
-  const id = 171;
-  const sql = "SELECT * FROM teacher WHERE id = " + id;
+
+  const sql =
+    "SELECT * FROM teacher WHERE teacher_id = " + req.session.username;
   connection.query(sql, function (error, result) {
-    teacherInfo = {
-      id: result[0].id,
-      name: result[0].name,
-      subject: result[0].subject,
-      joining_date: result[0].joining_date,
-      gender: result[0].gender,
-      email: result[0].email,
-      address: result[0].address,
-      phone: result[0].phone,
-    };
-    res.render("teacher-profile", teacherInfo);
-    //console.log("this is this is" + req.body.username);
+    res.render("teacher-profile", result[0]);
   });
 });
 
@@ -122,26 +111,15 @@ router.post("/teacher-profile", function (req, res) {
       console.error("error connecting: " + err.stack);
       return;
     }
-
     console.log("connected as id " + connection.threadId);
   });
-  const id = 171;
-  const sql = "SELECT * FROM teacher WHERE id = " + id;
-  connection.query(sql, function (error, result) {
-    teacherInfo = {
-      id: result[0].id,
-      name: result[0].name,
-      subject: result[0].subject,
-      joining_date: result[0].joining_date,
-      gender: result[0].gender,
-      email: result[0].email,
-      address: result[0].address,
-      phone: result[0].phone,
-    };
 
+  const sql =
+    "SELECT * FROM teacher WHERE teacher_id = " + req.session.username;
+  connection.query(sql, function (error, result) {
     var html = fs.readFileSync("./views/teacher-profilePDF.ejs", "utf8");
     const options = { format: "A4" };
-    res.render("teacher-profilePDF", teacherInfo, function (err, html) {
+    res.render("teacher-profilePDF", result[0], function (err, html) {
       pdf
         .create(html, options)
         .toFile("./assets/uploads/profile.pdf", function (err, res) {

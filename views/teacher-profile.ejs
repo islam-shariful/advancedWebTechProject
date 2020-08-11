@@ -129,7 +129,7 @@
                     </li>
 
                     <li>
-                      <a href="login"
+                      <a href="/logout"
                         ><i class="flaticon-turn-off"></i>Log Out</a
                       >
                     </li>
@@ -288,7 +288,9 @@
         >
           <div class="mobile-sidebar-header d-md-none">
             <div class="header-logo">
-              <a href="index5"><img src="/assets/img/logo1.png" alt="logo" /></a>
+              <a href="/teacher/index5"
+                ><img src="/assets/img/logo1.png" alt="logo"
+              /></a>
             </div>
           </div>
           <div class="sidebar-menu-content">
@@ -299,27 +301,21 @@
                 >
                 <ul class="nav sub-group-menu sub-group-active">
                   <li class="nav-item">
-                    <a href="index5" class="nav-link menu-active"
+                    <a href="/teacher/index5" class="nav-link menu-active"
                       ><i class="fas fa-angle-right"></i>Teachers</a
                     >
                   </li>
                 </ul>
-
-                <!-- <li class="nav-item">
-                <a href="all-subject.html" class="nav-link"
-                  ><i class="flaticon-open-book"></i><span>Subject</span></a
-                >
-              </li> -->
               </li>
 
               <li class="nav-item">
-                <a href="class-routine" class="nav-link"
+                <a href="/teacher/class-routine" class="nav-link"
                   ><i class="flaticon-calendar"></i
                   ><span>Class Routine</span></a
                 >
               </li>
               <li class="nav-item">
-                <a href="student-attendence" class="nav-link"
+                <a href="/teacher/student-attendence" class="nav-link"
                   ><i class="flaticon-checklist"></i><span>Attendence</span></a
                 >
               </li>
@@ -328,27 +324,32 @@
                   ><i class="flaticon-shopping-list"></i><span>Exam</span></a
                 >
                 <ul class="nav sub-group-menu">
-                  
                   <li class="nav-item">
-                    <a href="exam-grade" class="nav-link"
+                    <a href="/teacher/exam-grade" class="nav-link"
                       ><i class="fas fa-angle-right"></i>Exam Grades</a
                     >
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="notice-board" class="nav-link"
+                <a href="/teacher/notice-board" class="nav-link"
                   ><i class="flaticon-script"></i><span>Notice</span></a
                 >
               </li>
               <li class="nav-item">
-                <a href="messaging" class="nav-link"
+                <a href="/teacher/messaging" class="nav-link"
                   ><i class="flaticon-chat"></i><span>Messeage</span></a
                 >
               </li>
+
               <li class="nav-item">
-                <a href="map" class="nav-link"
+                <a href="/teacher/map" class="nav-link"
                   ><i class="flaticon-planet-earth"></i><span>Map</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/teacher/note-upload" class="nav-link"
+                  ><span>Upload Note</span></a
                 >
               </li>
             </ul>
@@ -407,7 +408,7 @@
                 </div>
                 <div class="item-content">
                   <div class="header-inline item-header">
-                    <h3 class="text-dark-medium font-medium"> <%= name %> </h3>
+                    <h3 class="text-dark-medium font-medium"> <%= teachername %> </h3>
                     <div class="header-elements">
                       <ul>
                         <li>
@@ -436,44 +437,64 @@
                         <tr>
                           <td>ID:</td>
                           <td class="font-medium text-dark-medium">
-                            <%= id %>
+                            <%= teacher_id %>
                           </td>
                         </tr>
                         <tr>
                           <td>Name:</td>
-                          <td class="font-medium text-dark-medium"><%= name %></td>
+                          <td class="font-medium text-dark-medium"><%= teachername %></td>
                         </tr>
                         <tr>
-                          <td>Subject:</td>
+                          <td>E-mail:</td>
                           <td class="font-medium text-dark-medium">
-                            <%= subject %>
+                            <%= teacheremail %>
                           </td>
                         </tr>
                         <tr>
-                          <td>Joining Date:</td>
+                          <td>Designation:</td>
                           <td class="font-medium text-dark-medium">
-                            <%= joining_date %>
+                            <%= teacherdesignation %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Department:</td>
+                          <td class="font-medium text-dark-medium"><%= teacherdepartment %></td>
+                        </tr>
+                        <tr>
+                          <td>Subject Id:</td>
+                          <td class="font-medium text-dark-medium"><%= subject_id %></td>
+                        </tr> 
+                        <tr>
+                          <td>Address:</td>
+                          <td class="font-medium text-dark-medium">
+                            <%= teacheraddress %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Date of Birth:</td>
+                          <td class="font-medium text-dark-medium">
+                            <%= teacherdob %>
                           </td>
                         </tr>
                         <tr>
                           <td>Gender:</td>
-                          <td class="font-medium text-dark-medium"><%= gender %></td>
+                          <td class="font-medium text-dark-medium"><%= teachergender %></td>
                         </tr>
                         <tr>
-                          <td>Email:</td>
-                          <td class="font-medium text-dark-medium">
-                            <%= email %>
-                          </td>
+                          <td>Religion:</td>
+                          <td class="font-medium text-dark-medium"><%= teacherreligion %></td>
                         </tr>
                         <tr>
-                          <td>Address:</td>
-                          <td class="font-medium text-dark-medium">
-                            <%= address %>
-                          </td>
+                          <td>Joining Date:</td>
+                          <td class="font-medium text-dark-medium"><%= teacherjoiningdate %></td>
                         </tr>
                         <tr>
-                          <td>Phone:</td>
-                          <td class="font-medium text-dark-medium"><%= phone %></td>
+                          <td>Father Name:</td>
+                          <td class="font-medium text-dark-medium"><%= teacherfathername %></td>
+                        </tr>  
+                        <tr>
+                          <td>Mother Name:</td>
+                          <td class="font-medium text-dark-medium"><%= teachermothername %></td>
                         </tr>
                       </tbody>
                     </table>
