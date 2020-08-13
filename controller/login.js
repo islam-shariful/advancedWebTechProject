@@ -10,7 +10,7 @@ router.get("/", function (req, res) {
 router.post("/", function (req, res) {
   if (req.body.username == req.body.password) {
     req.session.username = req.body.username;
-    res.redirect("/teacher/index5");
+    res.redirect("/teacher/dashboard");
   } else {
     res.redirect("login");
   }

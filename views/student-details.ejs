@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Teacher | Notice Board</title>
+    <title>School | Home 5</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Favicon -->
@@ -25,10 +25,8 @@
     <link rel="stylesheet" href="/assets/fonts/flaticon.css" />
     <!-- Animate CSS -->
     <link rel="stylesheet" href="/assets/css/animate.min.css" />
-    <!-- Date Picker CSS -->
-    <link rel="stylesheet" href="/assets/css/datepicker.min.css" />
-    <!-- Select 2 CSS -->
-    <link rel="stylesheet" href="/assets/css/select2.min.css" />
+    <!-- Data Table CSS -->
+    <link rel="stylesheet" href="/assets/css/jquery.dataTables.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/style.css" />
     <!-- Modernize js -->
@@ -36,6 +34,9 @@
   </head>
 
   <body>
+    
+    
+
     <!-- Preloader Start Here -->
     <div id="preloader"></div>
     <!-- Preloader End Here -->
@@ -115,9 +116,7 @@
                 <div class="item-content">
                   <ul class="settings-list">
                     <li>
-                      <a href="teacher-profile"
-                        ><i class="flaticon-user"></i>My Profile</a
-                      >
+                      <a href="teacher-profile"><i class="flaticon-user"></i>My Profile</a>
                     </li>
                     <li>
                       <a href="#"><i class="flaticon-list"></i>Task</a>
@@ -140,7 +139,7 @@
                 </div>
               </div>
             </li>
-            <!-- <li class="navbar-item dropdown header-message">
+            <li class="navbar-item dropdown header-message">
               <a
                 class="navbar-nav-link dropdown-toggle"
                 href="#"
@@ -160,7 +159,7 @@
                 <div class="item-content">
                   <div class="media">
                     <div class="item-img bg-skyblue author-online">
-                      <img src="img/figure/student11.png" alt="img" />
+                      <img src="/assets/img/figure/student11.png" alt="img" />
                     </div>
                     <div class="media-body space-sm">
                       <div class="item-title">
@@ -177,7 +176,7 @@
                   </div>
                   <div class="media">
                     <div class="item-img bg-yellow author-online">
-                      <img src="img/figure/student12.png" alt="img" />
+                      <img src="/assets/img/figure/student12.png" alt="img" />
                     </div>
                     <div class="media-body space-sm">
                       <div class="item-title">
@@ -194,7 +193,7 @@
                   </div>
                   <div class="media">
                     <div class="item-img bg-pink">
-                      <img src="img/figure/student13.png" alt="img" />
+                      <img src="/assets/img/figure/student13.png" alt="img" />
                     </div>
                     <div class="media-body space-sm">
                       <div class="item-title">
@@ -211,7 +210,7 @@
                   </div>
                   <div class="media">
                     <div class="item-img bg-violet-blue">
-                      <img src="img/figure/student11.png" alt="img" />
+                      <img src="/assets/img/figure/student11.png" alt="img" />
                     </div>
                     <div class="media-body space-sm">
                       <div class="item-title">
@@ -228,7 +227,7 @@
                   </div>
                 </div>
               </div>
-            </li> -->
+            </li>
             <li class="navbar-item dropdown header-notification">
               <a
                 class="navbar-nav-link dropdown-toggle"
@@ -377,203 +376,152 @@
         </div>
         <!-- Sidebar Area End Here -->
         <div class="dashboard-content-one">
+          
+          <!-- Sidebar Area End Here -->
+        <div class="dashboard-content-one">
           <!-- Breadcubs Area Start Here -->
           <div class="breadcrumbs-area">
-            <h3>Teacher Dashboard</h3>
+            <h3>Teacher</h3>
             <ul>
               <li>
                 <a href="index5">Home</a>
               </li>
-              <li>Teachers</li>
+              <li>Teacher Details</li>
             </ul>
           </div>
           <!-- Breadcubs Area End Here -->
+          <!-- Teacher Table Area Start Here -->
+          <div class="card height-auto">
+            <div class="card-body">
+              <div class="heading-layout1">
+                <div class="item-title">
+                  <h3>About Me</h3>
+                </div>
+                <!-- <div class="dropdown">
+                  <a
+                    class="dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                    >...</a
+                  >
 
-          <div class="row">
-            <!-- Add Notice Area Start Here -->
-            <div class="col-4-xxxl col-12">
-              <div class="card height-auto">
-                <div class="card-body">
-                  <div class="heading-layout1">
-                    <div class="item-title">
-                      <h3>Create A Notice</h3>
-                    </div>
-                    <div class="dropdown">
-                      <a
-                        class="dropdown-toggle"
-                        href="#"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-expanded="false"
-                        >...</a
-                      >
-
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#"
-                          ><i class="fas fa-times text-orange-red"></i>Close</a
-                        >
-                        <a class="dropdown-item" href="#"
-                          ><i class="fas fa-cogs text-dark-pastel-green"></i
-                          >Edit</a
-                        >
-                        <a class="dropdown-item" href="#"
-                          ><i class="fas fa-redo-alt text-orange-peel"></i
-                          >Refresh</a
-                        >
-                      </div>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#"
+                      ><i class="fas fa-times text-orange-red"></i>Close</a
+                    >
+                    <a class="dropdown-item" href="#"
+                      ><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a
+                    >
+                    <a class="dropdown-item" href="#"
+                      ><i class="fas fa-redo-alt text-orange-peel"></i
+                      >Refresh</a
+                    >
+                  </div>
+                </div> -->
+              </div>
+              <div class="single-info-details">
+                <div class="item-img">
+                  <% if(studentgender=="male" || studentgender=="Male") { %>
+                    <img src="/assets/img/figure/student1.png" alt="maleStudent" />
+                  <% }else{%>
+                    <img src="/assets/img/figure/student.png" alt="femaleStudent" />
+                  <%}%>
+                  
+                </div>
+                <div class="item-content">
+                  <div class="header-inline item-header">
+                    <h3 class="text-dark-medium font-medium"> <%= studentname %> </h3>
+                    <div class="header-elements">
+                      <ul>
+                        <li>
+                          <a href="#"><i class="far fa-edit"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fas fa-print"></i></a>
+                        </li>
+                        <li>
+                          <form method="POST">
+                            <!-- <a href="teacher-profile" onclick="pdfGen()"><i class="fas fa-download"></i></a> -->
+                            <button type="submit" class="fas fa-download">pdf</button>
+                            <label>[Under Construction]</label>
+                          </form> 
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                  <form method="post" class="new-added-form">
-                    <div class="row">
-                      <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                        <label>Notice ID</label>
-                        <input
-                          name="notice_id"
-                          type="text"
-                          placeholder="noticeId"
-                          class="form-control"
-                        />
-                      </div>
-                      <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                        <label>Description</label>
-                        <input
-                          name="description"
-                          type="text"
-                          placeholder="notice description"
-                          class="form-control"
-                        />
-                      </div>
-                      <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                        <label> Subject ID </label>
-                        <input
-                          name="subject_id"
-                          type="text"
-                          placeholder="subject"
-                          class="form-control"
-                        />
-                        <i class="fas fa-user"></i>
-                      </div>
-                      <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                        <label>Class ID</label>
-                        <input
-                          name="class_id"
-                          type="text"
-                          placeholder="Class"
-                          class="form-control"
-                        />
-                      </div>
-                      <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                        <label>Section ID</label>
-                        <input
-                          name="section_id"
-                          type="text"
-                          placeholder="section"
-                          class="form-control"
-                        />
-                      </div>
-                      <div class="col-12 form-group mg-t-8">
-                        <button
-                          type="submit"
-                          class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark"
-                        >
-                          Save
-                        </button>
-                        <!-- <button
-                          type="reset"
-                          class="btn-fill-lg bg-blue-dark btn-hover-yellow"
-                        >
-                          Reset [Under Production]
-                        </button> -->
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <!-- Add Notice Area End Here -->
-            <!-- All Notice Area Start Here -->
-            <div class="col-8-xxxl col-12">
-              <div class="card height-auto">
-                <div class="card-body">
-                  <!-- <div class="heading-layout1">
-                    <div class="item-title">
-                      <h3>Notice Board</h3>
-                    </div>
-                    <div class="dropdown">
-                      <a
-                        class="dropdown-toggle"
-                        href="#"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-expanded="false"
-                        >...</a
-                      >
-
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#"
-                          ><i class="fas fa-times text-orange-red"></i>Close</a
-                        >
-                        <a class="dropdown-item" href="#"
-                          ><i class="fas fa-cogs text-dark-pastel-green"></i
-                          >Edit</a
-                        >
-                        <a class="dropdown-item" href="#"
-                          ><i class="fas fa-redo-alt text-orange-peel"></i
-                          >Refresh</a
-                        >
-                      </div>
-                    </div>
-                  </div> -->
-                  <form class="mg-b-20">
-                    <div class="row gutters-8">
-                      <div class="col-lg-5 col-12 form-group">
-                        <input
-                          type="text"
-                          placeholder="Search by Class [Under Production]"
-                          class="form-control"
-                        />
-                      </div>
-                      <div class="col-lg-5 col-12 form-group">
-                        <input
-                          type="text"
-                          placeholder="Search by Date [Under Production]"
-                          class="form-control"
-                        />
-                      </div>
-                      <div class="col-lg-2 col-12 form-group">
-                        <button
-                          type="submit"
-                          class="fw-btn-fill btn-gradient-yellow"
-                        >
-                          SEARCH
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                  <div class="notice-board-wrap">
-                    <% for(var i=0; i < noticeList.length; i++){ %>
-                    <div class="notice-list">
-                      <div class="post-date bg-skyblue">
-                        <%= noticeList[i].noticedate %>
-                      </div>
-                      <h6 class="notice-title">
-                        <a href="#"><%= noticeList[i].description %></a>
-                      </h6>
-                      <div class="entry-meta">
-                        Class : <%= noticeList[i].class_id %>/ Section :
-                        <span><%= noticeList[i].section_id %></span>/ Subject :
-                        <span><%= noticeList[i].subject_id %></span>/
-                        <i>Notice ID : </i>
-                        <span><i><%= noticeList[i].notice_id %></i></span>
-                      </div>
-                    </div>
-                    <% } %>
+                  <p>
+                    <!-- Aliquam erat volutpat. Curabiene natis massa sedde lacu
+                    stiquen sodale word moun taiery.Aliquam erat
+                    volutpaturabiene natis massa sedde sodale word moun taiery. -->
+                  </p>
+                  <div class="info-table table-responsive">
+                    <table class="table text-nowrap">
+                      <tbody>
+                        <tr>
+                          <td>ID:</td>
+                          <td class="font-medium text-dark-medium">
+                            <%= student_id %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Name:</td>
+                          <td class="font-medium text-dark-medium"><%= studentname %></td>
+                        </tr>
+                        <tr>
+                          <td>Class:</td>
+                          <td class="font-medium text-dark-medium"><%= class_id %></td>
+                        </tr>
+                        <tr>
+                          <td>Section:</td>
+                          <td class="font-medium text-dark-medium"><%= section_id %></td>
+                        </tr>
+                        <tr>
+                          <td>Gender:</td>
+                          <td class="font-medium text-dark-medium"><%= studentgender %></td>
+                        </tr>
+                        <tr>
+                        <tr>
+                          <td>Birth Date:</td>
+                          <td class="font-medium text-dark-medium"><%= studentdob %></td>
+                        </tr>
+                        <tr>
+                          <td>father:</td>
+                          <td class="font-medium text-dark-medium"><%= studentfathername %></td>
+                        </tr>
+                        <tr>
+                          <td>Mother:</td>
+                          <td class="font-medium text-dark-medium"><%= studentmothername %></td>
+                        </tr>
+                        <tr>
+                          <td>Guardian Number:</td>
+                          <td class="font-medium text-dark-medium"><%= guardiannumber %></td>
+                        </tr>
+                        <tr>
+                          <td>E-mail:</td>
+                          <td class="font-medium text-dark-medium">
+                            <%= studentemail %>
+                          </td>
+                        </tr> 
+                        <tr>
+                          <td>Address:</td>
+                          <td class="font-medium text-dark-medium">
+                            <%= studentaddress %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Religion:</td>
+                          <td class="font-medium text-dark-medium"><%= studentreligion %></td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- All Notice Area End Here -->
           </div>
+          <!-- Teacher Table Area End Here -->
 
           <footer class="footer-wrap-layout1"></footer>
         </div>
