@@ -33,4 +33,4 @@ app.use("/login", login.routes);
 app.use("/logout", logout.routes);
 app.use("/teacher", teacher.routes);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
